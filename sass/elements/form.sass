@@ -121,6 +121,14 @@ $input-radius:              $radius !default
     font-size: 1em
     outline: none
     padding-right: 2.5em
+    // Colors
+    @each $name, $pair in $colors
+      $color: nth($pair, 1)
+      &.is-#{$name}
+        border-color: $color
+        &:hover
+          border-color: $color
+
     &:hover
       border-color: $input-hover-border
     &::ms-expand
