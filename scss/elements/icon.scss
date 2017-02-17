@@ -1,0 +1,21 @@
+.icon {
+  @include fa(21px, 1.5rem);
+
+  .fa {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  // Sizes
+  &.is-small {
+    @include fa(14px, 1rem);
+  }
+
+  &.is-medium {
+    @include fa(28px, 2rem);
+  }
+
+  &.is-large {
+    @include fa(42px, 3rem);
+  }
+}
