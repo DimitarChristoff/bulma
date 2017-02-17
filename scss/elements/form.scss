@@ -167,11 +167,20 @@ $input-radius: $radius !default;
     outline: none;
     padding-right: 2.5em;
 
+    // Colors
+    @each $name, $pair in $colors {
+      $color: nth($pair, 1);
+
+      &.is-#{$name} {
+        border-color: $color;
+      }
+    }
+
     &:hover {
       border-color: $input-hover-border;
     }
 
-    &::ms-expand {
+    &::-ms-expand {
       display: none;
     }
   }
@@ -425,10 +434,15 @@ $input-radius: $radius !default;
   &.is-grouped {
     display: flex;
     justify-content: flex-start;
+    flex-basis: auto;
 
     & > .control {
-      flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+      -ms-flex-preferred-size: auto;
       flex-shrink: 0;
+      flex-basis: 0;
+      flex-basis: auto;
+      -ms-flex-negative: 0;
 
       &:not(:last-child) {
         margin-bottom: 0;
